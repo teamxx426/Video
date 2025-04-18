@@ -2,30 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bange Tube Sex</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Video Portal</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Login -->
 <div class="container" id="loginForm">
-  <h2>Login</h2>
-  <input type="text" id="phone" maxlength="11" placeholder="Enter Number (max 11 digits)" />
-  <input type="password" id="password" placeholder="Enter Any Password" />
+  <h2>Login to View Videos</h2>
+  <input type="text" id="phone" placeholder="Phone Number (max 11 digits)" maxlength="11" />
+  
+  <div class="password-wrapper">
+    <input type="password" id="password" placeholder="Password" />
+    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+  </div>
+  
   <button onclick="handleLogin()">Login</button>
 </div>
 
-<!-- Video Gallery -->
-<div class="video-section" id="videoArea">
-  <h2 style="text-align:center;">Click a Video</h2>
-  <div class="video-grid" id="videoGrid"></div>
+<div class="container" id="videoArea">
+  <div class="top-bar">
+    <select id="categoryFilter" onchange="filterVideos()">
+      <option value="all">All Categories</option>
+      <option value="Bangla">Bangla</option>
+      <option value="Tech">Tech</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Search..." oninput="filterVideos()" />
+    <button onclick="logout()">Logout</button>
+  </div>
+  <div id="videoGrid"></div>
 </div>
 
-<!-- Single Video View -->
-<div class="video-player-container" id="playerView">
-  <h2 id="videoTitle"></h2>
-  <video id="videoPlayer" controls></video>
-  <button class="back-button" onclick="goBack()">Back to Videos</button>
+<div class="container" id="playerView">
+  <h2 id="videoTitle">Playing...</h2>
+  <p id="videoDescription" style="color: #f39c12;">Description: </p>
+
+  <video id="videoPlayer" width="100%" controls>
+    <source id="videoSource" src="" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="controls-bar">
+    <button class="control-btn" onclick="togglePlayPause()">⏸️</button>
+    <div class="progress-bar" onclick="seekVideo(event)">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="time-display" id="currentTime">00:00</div>
+    <div class="time-display" id="totalTime">00:00</div>
+    <button class="control-btn" onclick="toggleMute()">🔊</button>
+    <input type="range" class="volume-control" id="volumeControl" value="100" max="100" onchange="changeVolume(event)" />
+    <select class="speed-control" id="speedControl" onchange="changeSpeed(event)">
+      <option value="1">1x</option>
+      <option value="1.25">1.25x</option>
+      <option value="1.5">1.5x</option>
+      <option value="2">2x</option>
+    </select>
+    <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
+  </div>
+
+  <button onclick="goBack()">Back to Videos</button>
 </div>
 
 <script src="script.js"></script>
