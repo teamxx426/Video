@@ -1,7 +1,10 @@
+/* General Styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
-  background: #f7f7f7;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+  color: #fff;
+  text-align: center;
 }
 
 .container {
@@ -10,16 +13,24 @@ body {
   padding: 20px;
 }
 
+/* Login Box Styling */
 .login-box {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff7e5f;
+}
+
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .password-wrapper {
@@ -31,19 +42,23 @@ body {
   right: 10px;
   top: 12px;
   cursor: pointer;
+  font-size: 1.2rem;
+  color: #ff7e5f;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #f39c12;
+  padding: 15px 30px;
+  background-color: #ff7e5f;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #e67e22;
+  background-color: #feb47b;
 }
 
 .error-message {
@@ -58,19 +73,40 @@ button:hover {
 }
 
 .login-footer a {
-  color: #f39c12;
+  color: #ff7e5f;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Video Area */
+#videoArea {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+}
+
+#videoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .video-card {
-  border: 1px solid #ccc;
+  margin: 20px;
+  width: 240px;
   border-radius: 8px;
-  margin: 10px;
-  width: 220px;
   overflow: hidden;
-  background: white;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
 }
 
 .video-thumb {
@@ -81,41 +117,71 @@ button:hover {
 
 .video-title {
   padding: 10px;
-  text-align: center;
+  background-color: #333;
+  color: #ff7e5f;
   font-weight: bold;
+  font-size: 1rem;
 }
 
-#videoGrid {
+.top-bar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-/* Additional Player Controls and Styles */
+input[type="text"], select {
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #ff7e5f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #feb47b;
+}
+
+/* Video Player Styling */
+#playerView {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
 #videoPlayer {
   width: 100%;
-  max-width: 100%;
-  margin-bottom: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .controls-bar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
 }
 
 .control-btn {
   background: none;
   border: none;
-  color: #f39c12;
+  color: #ff7e5f;
   font-size: 1.5em;
   cursor: pointer;
 }
 
 .control-btn:hover {
-  color: #e67e22;
+  color: #feb47b;
 }
 
 .progress-bar {
@@ -128,7 +194,7 @@ button:hover {
 
 .progress {
   height: 100%;
-  background: #f39c12;
+  background: #ff7e5f;
 }
 
 .time-display {
@@ -141,4 +207,15 @@ button:hover {
 
 .fullscreen-btn {
   font-size: 1.5em;
+}
+
+button {
+  background-color: #ff7e5f;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #feb47b;
 }
